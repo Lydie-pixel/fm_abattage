@@ -1,32 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Témoignages</title>
-</head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Témoignages</title>
+
+        <link href="/asset/css/general.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    </head>
     <body>
-    <div id="header"></div>
-    <script>
-    fetch("./composant/header.html") 
-    .then(res => res.text())
-    .then(data => {
-        document.getElementById("header").innerHTML = data;
-    });
-    </script>
-    <main>
         
-    </main>
-    <div id="footer">
+        <div id="header"></div>
+        
+        <main>
+            <section class="container my-5">
+                <h2 class="text-center mb-5">Témoignages clients</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="mb-2 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                </div>
+                                <p>
+                                    " Il était à l'heure, enlèvement rapide des déchets verts et d'une table e, 25-30 min. Il est arriver avec le matériel nécessaire."
+                                </p>
+                                <h6 class="mt-3">— Anaïs G.</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="mb-2 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                </div>
+                                <p>
+                                    "Personne très professionnelle et serviable, il a effectué la motobineuse chez moi. C'est quelqu'un de parole qui devait effectué le travail en 3h00 et à mis 7h00 sans supplément financier."
+                                </p>
+                                <h6 class="mt-3">— Cheraz M.</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow">
+                            <div class="card-body">
+                                <div class="mb-2 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                </div>
+                                <p>
+                                    " Sérieux et sympathique , je recommande "
+                                </p>
+                                <h6 class="mt-3">— Sylvie V.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container my-5">
+                <h2 class="mb-4 text-center">Ajouter un commentaire</h2>
+
+                <form action="#" method="post" class="mx-auto" style="max-width:600px;">
+
+                    <div class="mb-3">
+                        <label class="form-label">Note</label>
+                        <select class="form-select" required>
+                            <option value="">Choisir une note</option>
+                            <option>⭐⭐⭐⭐⭐</option>
+                            <option>⭐⭐⭐⭐</option>
+                            <option>⭐⭐⭐</option>
+                            <option>⭐⭐</option>
+                            <option>⭐</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label">Nom</label>
+                    <input type="text" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="5" required></textarea>
+                    </div>
+
+                    <div class="text-center">
+                    <button class="btn btn-primary px-4">Envoyer un commentaire</button>
+                    </div>
+
+                </form>
+            </section>
+        </main>
+
+        <div id="footer"></div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            fetch("./composant/footer.html")
+            fetch("/pages/composant/header.html")
             .then(res => res.text())
-            .then(data => {
-                document.getElementById("footer").innerHTML = data;
-            });
+            .then(data => document.getElementById("header").innerHTML = data);
+
+            fetch("/pages/composant/footer.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
         </script>
-    </div>
-</body>
+    </body>
 </html>
