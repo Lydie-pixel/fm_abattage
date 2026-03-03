@@ -11,7 +11,7 @@
         <div id="header"></div>
         <main>
             <h2>Foire aux questions - FM Abattage</h2>
-            <section>
+            <section class="container my-5">
                 <p>Bienvenue sur la page FAQ de FM Abattage. Découvrez les réponses aux questions les plus fréquemment posées sur nos services de taille de haie, élagage d'arbres et abattage d'arbres à Saint Paul de Varax, France.</p>
             </section>
             <section>
@@ -139,7 +139,7 @@
                 </div>
             </section>
         </main>
-        <div id="footer">
+        <div id="footer"></div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
             <script>
                 fetch("/pages/composant/header.html")
@@ -150,6 +150,5 @@
                 .then(res => res.text())
                 .then(data => document.getElementById("footer").innerHTML = data);
             </script>
-        </div>  
     </body>
 </html>
