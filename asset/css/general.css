@@ -1,0 +1,69 @@
+:root {
+  --green-dark: #47772D;
+  --green-light: #ACC27A;
+  --yellow: #DDE689;
+  --brown: #6A4A3B;
+  --brown-dark: #65542F;
+}
+
+header {
+  background-image: url("../../asset/img/banner/oiseaux.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 120px;
+
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+header > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+}
+
+/* Téléphone*/
+
+@media (max-width: 768px) {
+
+  header .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+}
+
+nav a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
