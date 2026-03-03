@@ -1,0 +1,7 @@
+{
+  "liveServer.settings.ignoreFiles": [
+    "**/composant/*.html",
+    "**/header.html",
+    "**/footer.html"
+  ]
+}
