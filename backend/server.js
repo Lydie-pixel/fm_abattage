@@ -1,50 +1,29 @@
-const express = require("express")
-const mongoose = require("mongoose")
-const cors = require("cors")
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
 
-const app = express()
+const testimonialRoutes = require("./routes/testimonialRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
-app.use(cors())
-app.use(express.json())
+const app = express();
 
-mongoose.connect("mongodb://127.0.0.1:27017/fmabattage")
+app.use(cors());
+app.use(express.json());
 
-/* Formulaire */
-const messageSchema = new mongoose.Schema({
-    nom: String,
-    email: String,
-    message: String
+// connexion MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 })
+.then(() => console.log("MongoDB connecté"))
+.catch(err => console.log(err));
 
-const Message = mongoose.model("Message", messageSchema)
+// routes API
+app.use("/api/testimonials", testimonialRoutes);
+app.use("/api/contacts", contactRoutes);
 
-app.post("/contact", async (req,res)=>{
-    const message = new Message(req.body)
-    await message.save()
-    res.json({status:"Message enregistré"})
-})
-
-app.listen(3000, ()=>{
-    console.log("Serveur lancé sur port 3000")
-})
-
-/* Témoignages */
-
-const avisSchema = new mongoose.Schema({
-    nom:String,
-    message:String,
-    note:Number
-})
-
-const Avis = mongoose.model("Avis", avisSchema)
-
-app.post("/avis", async(req,res)=>{
-    const avis = new Avis(req.body)
-    await avis.save()
-    res.json({status:"Avis enregistré"})
-})
-
-app.get("/avis", async(req,res)=>{
-    const avis = await Avis.find()
-    res.json(avis)
-})
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Serveur lancé sur le port ${PORT}`);
+});

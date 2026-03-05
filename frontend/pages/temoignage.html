@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Témoignages</title>
 
+        <link href="/frontend/asset/img/logo/Logo.png" rel="icon">
         <link href="/frontend/asset/css/general.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -80,24 +81,19 @@
 
                     <div class="mb-3">
                         <label class="form-label">Note</label>
-                        <select class="form-select" required>
+                        <select name="rating" class="form-select" required>
                             <option value="">Choisir une note</option>
-                            <option>⭐⭐⭐⭐⭐</option>
-                            <option>⭐⭐⭐⭐</option>
-                            <option>⭐⭐⭐</option>
-                            <option>⭐⭐</option>
-                            <option>⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="3">⭐⭐⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="1">⭐</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                     <label class="form-label">Nom</label>
                     <input type="text" class="form-control" required>
-                    </div>
-
-                    <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
@@ -126,35 +122,31 @@
             .then(data => document.getElementById("footer").innerHTML = data);
 
             // charger les avis depuis le backend
-            async function chargerAvis(){
-
-            const res = await fetch("http://localhost:3000/avis")
-            const avis = await res.json()
-
-            const container = document.getElementById("listeAvis")
-
-            container.innerHTML = ""
-
-            avis.forEach(a =>{
-
-            container.innerHTML += `
-            <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow">
-            <div class="card-body">
-
-            <p>"${a.message}"</p>
-
-            <h6 class="mt-3">— ${a.nom}</h6>
-
-            </div>
-            </div>
-            </div>
-            `
-            })
-
+            function displayStars(rating) {
+            return "⭐".repeat(rating);
             }
 
-            chargerAvis()
+            fetch("http://localhost:3000/api/testimonials")
+            .then(res => res.json())
+            .then(data => {
+
+                const container = document.getElementById("testimonials");
+
+                data.forEach(t => {
+
+                const div = document.createElement("div");
+
+                div.innerHTML = `
+                    <h3>${displayStars(t.rating)}</h3>
+                    <p>${t.name}</p>
+                    <p>${t.message}</p>
+                `;
+
+                container.appendChild(div);
+
+                });
+
+            });
         </script>
     </body>
 </html>

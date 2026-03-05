@@ -105,6 +105,9 @@ header > .container {
 
 nav a {
   text-decoration: none;
+  color: #DDE689;
+  font-size: larger;
+  margin: 0 10px;
   transition: 0.3s;
 }
 
