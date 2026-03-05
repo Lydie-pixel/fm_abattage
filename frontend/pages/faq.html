@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/frontend/asset/css/general.css" rel="stylesheet">
+        <title>Foire aux questions</title>
+    </head>
+    <body>
+        <div id="header"></div>
+        <main>
+            <h2>Foire aux questions - FM Abattage</h2>
+            <section class="container my-5">
+                <p>Bienvenue sur la page FAQ de FM Abattage. Découvrez les réponses aux questions les plus fréquemment posées sur nos services de taille de haie, élagage d'arbres et abattage d'arbres à Saint Paul de Varax, France.</p>
+            </section>
+            <section>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q1">
+                                Puis-je obtenir un devis gratuit ?
+                            </button>
+                        </h3>
+
+                        <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, contactez-nous pour obtenir un devis personnalisé et gratuit pour votre projet.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q2">
+                                Quels services proposez-vous ?
+                            </button>
+                        </h3>
+
+                        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nous proposons des services de taille de haie, élagage d'arbres et abattage d'arbres.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q3">
+                                Où êtes-vous situés ?
+                            </button>
+                        </h2>
+
+                        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Notre entreprise est basée à Saint Paul de Varax, en France.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q4">
+                                Quels types d'arbres abattez-vous ?
+                            </button>
+                        </h3>
+
+                        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Nous abattons une variété d'arbres, en nous assurant de respecter l'environnement et la sécurité.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q5">
+                                Puis-je faire appel à vos services pour l'entretien de mon jardin ?
+                            </button>
+                        </h3>
+
+                        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Absolument, nous proposons des services d'entretien de jardin pour vous aider à maintenir un espace extérieur magnifique toute l'année.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q6">
+                                Combien de temps cela prend-il pour effectuer une taille de haie ?
+                            </button>
+                        </h3>
+
+                        <div id="q6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            La durée dépend de la taille de la haie, mais nous travaillons efficacement pour terminer rapidement.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q7">
+                                Avez-vous du matériel professionnel pour vos services ?
+                            </button>
+                        </h3>
+
+                        <div id="q7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, nous utilisons du matériel de haute qualité et des techniques modernes pour garantir des résultats exceptionnels.
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#q8">
+                                Disposez-vous d'une assurance pour votre travail ?
+                            </button>
+                        </h3>
+
+                        <div id="q8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Oui, nous sommes entièrement assurés pour garantir la sécurité de nos clients et de notre équipe.
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="footer"></div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+                fetch("/frontend/pages/composant/header.html")
+                .then(res => res.text())
+                .then(data => document.getElementById("header").innerHTML = data);
+
+                fetch("/frontend/pages/composant/footer.html")
+                .then(res => res.text())
+                .then(data => document.getElementById("footer").innerHTML = data);
+            </script>
+    </body>
+</html>
