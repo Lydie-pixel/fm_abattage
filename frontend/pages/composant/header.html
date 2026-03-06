@@ -1,16 +1,48 @@
-<header class="text-white py-3 mb-4">
-  <div class="container d-flex justify-content-between align-items-center">
-    <img src="/frontend/asset/img/logo/Logo.png" alt="Logo FM Abattage" class="logo">
-    <h1 class="mb-0">FM Abattage</h1>
+<header>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
 
-    <nav>
-      <a href="/index.html">Accueil</a>
-      <a href="/frontend/pages/services.html">Services</a>
-      <a href="/frontend/pages/temoignage.html">Témoignages</a>
-      <a href="/frontend/pages/contact.html">Contact</a>
-      <a href="/frontend/pages/faq.html">FAQ</a>
-      <a href="/frontend/pages/legal.html">Mentions légales</a>
-    </nav>
-    
+    <a class="navbar-brand d-flex align-items-center" href="/index.html">
+      <img src="/frontend/asset/img/logo/Logo.png" alt="Logo FM Abattage" width="50" class="me-2">
+      FM Abattage
+    </a>
+
+    <!-- bouton burger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- menu -->
+    <div class="collapse navbar-collapse" id="menuNavbar">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html">Accueil</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/frontend/pages/services.html">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/frontend/pages/temoignage.html">Témoignages</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/frontend/pages/faq.html">FAQ</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/frontend/pages/contact.html">Contact</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/frontend/pages/legal.html">Mentions légales</a>
+        </li>
+
+      </ul>
+    </div>
+
   </div>
+</nav>
 </header>
